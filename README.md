@@ -54,33 +54,72 @@
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `seeking`
 
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+**Definition:** asking or prompting other people for something the user doesn't already have, such as advice they need or reassurance. Has the highest importance if there’s overlap with other categories.
 
 **Example 1:**
->
+>https://www.reddit.com/r/studytips/comments/1x6h64f/how_can_i_improve_my_study_space_in_a_very_tight/
+```
+How can I improve my study space in a very tight budget 🥹
+
+Budgeting is very minimal
+```
 
 **Example 2:**
->
+>https://www.reddit.com/r/studytips/comments/1x4ph7g/any_suggestions_on_how_to_utilise_3_devices/
+```
+Any suggestions on how to utilise 3 devices 😭
+
+So I bought a new laptop yesterday and now I have 3 devices (2 laptops and a tablet). The older laptop is just capable of doing very light work (4gb of ram with a 2012 processor). Any suggestions on how to utilise all the 3 devices for my studying? I'm studying physics btw
+```
+
+### `advising`
+
+**Definition:** talking about actions that people should do, or actions the user does and feels positively about.
+
+**Example 1:**
+>https://www.reddit.com/r/studytips/comments/1x5tz8w/i_count_5_seconds_to_force_myself_to_study/
+```
+I count 5 seconds to force myself to study.
+
+Whenever I feel too lazy to study, I just use the 5 second rule to force myself to get up and go study. I just count down 5-4-3-2-1 and immediately start studying.
+
+This honestly works because your brain won't have time to make excuses. You just need to be strict with yourself so you can stop being lazy and start studying instead.
+```
+
+**Example 2:**
+>https://www.reddit.com/r/studytips/comments/1x5ns4e/homework_advice/
+```
+Homework Advice
+
+Do some amount of homework every single day. Not saying you should be a grind but just get SOMETHING done each day. Because if you don’t, the work is just gonna pile up on you and you’ll be left scrambling and stressing trying to get the hw done.
+```
+
+### `experience`
+
+**Definition:** only talking about their own experience with something, typically venting negatively. Has the lowest importance. Reserved for when the post is neither seeking nor giving advice.
+
+**Example 1:**
+>https://www.reddit.com/r/studytips/comments/1rbgk4t/common_student_in_south_korea/
+```
+Common student in south Korea
+
+I feel so unmotivated today
+```
+
+**Example 2:**
+>https://www.reddit.com/r/studytips/comments/1r4kea3/trying_to_get_it_together/
+```
+Trying to get it together
+```
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** seeking and advising
 
 **The decision rule I used every time:**
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+If a post is asking a question for discussion instead of genuinely asking for something the user wants and does not have, then this question does not contribute to the category. Several posts have a question in the header or in the body as a prompt for discussion, while the post's body text is primarily giving advice. Such a post is an `advising` post. If a post happens to have both advice and a genuine question, then `seeking`'s higher importance takes precedence.
 
 
 
