@@ -50,62 +50,38 @@ whether you hit them:
   Pick with that in mind — it is stricter than it first sounds.
 
 ---
-
-## 1.
-
-<!-- Your criterion. It must name a number. -->
+All criteria are for the held-out test set.
 
 
+## 1. Overall Accuracy is at least 85%.
 
-**Why this target:**
-
-
+**Why this target:** Despite the model’s potential shortcomings in confidence in predicting overlap posts, the model should be able to pick up on subtle distinctions for several of the edge cases such that it can correctly categorize them.
 
 ---
 
-## 2.
+## 2. No label should exceed 70% of the predictions.
 
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
+**Why this target:** The dataset has a near-equal amount of seeking and advising posts, with a much smaller amount of experience posts, so if one label vastly outnumbers the others in the predictions, there is a problem with the model.
 
 ---
 
-## 3.
+## 3. accuracy_most_confident_third is at least 10 percentage points higher than accuracy_least_confident_third.
 
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
-
-
+**Why this target:**  Each category has observable distinctions, but the tiebreakers aren’t obvious. Without direct categorization rules, the model may get hung up on overlap/edge cases, and there is a large number of them.
 
 ---
 
-## 4.
+## 4. Recall for Experience is at least 60%.
 
-<!-- Your criterion. -->
+**Why this target:** Experience posts are vastly fewer than the other two labels and have less ‘indicators’ than the others like the words “how” or “advice”, so the model might have trouble recognizing Experience posts. 
 
-
-
-**Why this target:**
-
-
+<!-- (Recall = out of all real X, how much was correctly predicted as X) -->
 
 ---
 
-## 5.
+## 5. Experience should not go below 10% of the predictions.
 
-<!-- Your criterion. -->
-
-
-
-**Why this target:**
+**Why this target:**  On the opposite side of the spectrum, the model should not ignore the Experience label. It exists as a distinct category with distinguishing characteristics, and has enough posts that it should be substantially detectable.
 
 
 
