@@ -138,7 +138,7 @@ If a post is asking a question for discussion instead of genuinely asking for so
 **Where the posts came from:** r/StudyTips on reddit: https://www.reddit.com/r/studytips/?communityAnchorSource=daily_discussion
 
 **How I labelled them:**
-I labelled all of them cold, then asked Claude to go through all of them and tell me if any of them feel wrong.
+I labelled all of them cold first, then asked Claude to go through all of them and tell me if any of them feel wrong. The posts that Claude convinced me to relabel are noted "ai-revised".
 
 **Counts per label:**
 
