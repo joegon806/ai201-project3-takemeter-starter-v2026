@@ -121,6 +121,11 @@ Trying to get it together
 **The decision rule I used every time:**
 If a post is asking a question for discussion instead of genuinely asking for something the user wants and does not have, then this question does not contribute to the category. Several posts have a question in the header or in the body as a prompt for discussion, while the post's body text is primarily giving advice. Such a post is an `advising` post. If a post happens to have both advice and a genuine question, then `seeking`'s higher importance takes precedence.
 
+**Other specific boundary rules I used:**
+- If a post is asking a question for discussion, this does not contribute to the category. Unless none of the other categories apply, in which case this is Seeking.
+- If a post is talking about a user’s positive experience, but is definitively citing specific actions the user is doing as the cause of the positivity, using a tone that implies the user is imploring other users to do the same, then it’s Advising.
+
+
 
 
 ---
@@ -132,17 +137,17 @@ If a post is asking a question for discussion instead of genuinely asking for so
 
 **Where the posts came from:** r/StudyTips on reddit: https://www.reddit.com/r/studytips/?communityAnchorSource=daily_discussion
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:**
+I labelled all of them cold, then asked Claude to go through all of them and tell me if any of them feel wrong.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| seeking | 98 | 49.0% |
+| advising | 57 | 28.5% |
+| experience | 45 | 22.5% |
+| **Total** | 200 | 100% |
 
 **Three hard cases**
 
@@ -150,25 +155,26 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* I only get to study when it’s night time??? I love going to the library at night because it’s empty, calm and I can finally focus. The only problem is that I don’t feel comfortable going home later than 10 pm, so I have to leave even when I’m still motivated. Weirdly during the day it’s the opposite: I usually wake up around 9 am ready to go, but once I get there I can’t concentrate for long and I end up leaving pretty quickly without getting much done. Crowded libraries just don’t work for me. When my sister visits, it’s easier bcs she walks with me, so I feel safe enough to stay 2–3 hours longer at night. My friends in other hand don’t study at night, so most of the time I’m on my own. Does anyone else have this problem? How do you manage to study productively during the day if your brain only seems to work at a certain time?… help
+
 >
-> *Could have been:*
+> *Could have been:* Experience
 >
-> *I chose, because:*
+> *I chose, because:* Seeking, because despite the user giving experience, they do ask a specific question for help at the end. 
 
 **2.**
-> *The post:*
+> *The post:* I just wanna be stupidly good at math. But I'm just a noob😭😭
 >
-> *Could have been:*
+> *Could have been:* Seeking
 >
-> *I chose, because:*
+> *I chose, because:* Experience; arguably, the post is implicitly asking for tips. But because the post doesn't explicitly ask for help, it comes across as the user sharing their experience with math.
 
 **3.**
-> *The post:*
+> *The post:* Give me your most toxic study motivation: Toxic finals motivation tip: stand outside in the cold when ur too tired to study so yk how you'll feel when ur homeless if you fail
 >
-> *Could have been:*
+> *Could have been:* Advising
 >
-> *I chose, because:*
+> *I chose, because:* Seeking; the user gave joke advice instead of real advice, so this post is not Advising, it is Seeking joke advice from others.
 
 ---
 
