@@ -182,17 +182,22 @@ I labelled all of them cold first, then asked Claude to go through all of them a
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** "distilbert-base-uncased"
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** seed 42, 3 epochs, lr 2e-05, batch 16
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** N/A
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:** train 139  ·  val 31  ·  test 30
 
-
+```
+            train  val  test
+label                       
+seeking        68   15    14
+advising       40    9     9
+experience     31    7     7
+```
+(experience has only 7 entries in both the val and test sets, and advising has 9 in both as well.)
 
 ---
 
