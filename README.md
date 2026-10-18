@@ -41,7 +41,7 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
+TakeMeter is model trained to identify whether a text post is Seeking help from other users, Advising other users, or just sharing their own Experience. The model is trained on posts from the r/studytips subreddit on reddit.com. 200 posts from the subreddit have been collected, labeled, and fed to the model to split into sets for training, evaluation, and testing.
 
 
 ---
@@ -212,17 +212,17 @@ experience     31    7     7
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Eight posts that sit on the boundaries of my first-draft categories
+- *What came back:* Eight posts with overlapping cases or with the vibes of multiple cases, along with explanations of the weak spots exposed by the posts.
+- *What I changed:* I renamed one of my categories and added more explanation to tighten them.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Whether or not my acceptance criteria could be checked by someone who couldn't asked me what I meant.
+- *What came back:* Assurance on two of my criteria, and feedback on ambiguous parts of the other three criteria.
+- *What I changed:* I heavily revised my criterion about confidence, I added a general line clarifying that all criteria are applied to the held-out test set, and replaced Accuracy for Experience with Recall for Experience.
 
-**Pre-labelling disclosure:**
+**Pre-labelling disclosure:** I read and labelled every one of the 200 posts, and I had Claude review each one and explain to me which posts felt like they were labeled wrong. Posts whose labels are revised due to the AI's feedback are noted with "ai-revised".
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
