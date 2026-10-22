@@ -238,18 +238,18 @@ experience     31    7     7
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.333 | 0.467 | +0.133 |
+| Macro F1 | 0.323 | 0.212 | -0.111 |
+| F1 — `advising` | 0.435 | 0.000 | -0.435 |
+| F1 — `experience` | 0.286 | 0.000 | -0.286 |
+| F1 — `seeking` | 0.250 | 0.636 | +0.386 |
 
 **What I predicted before I looked:**
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+I predicted that the baseline model would be much more accurate than the trained model, because the trained model was only trained off the sentences themselves, which could vary in what words would indicate their categories, and because the baseline is trained off my definitions, which are intricate and designed to catch edge cases.
 
 **What the gap actually means:**
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
+The trained model guessed seeking on every post and got 47% overall accuracy, perhaps indicating that the majority of seeking posts overpowers the advising and experience posts, making it hard for the model to discern distinguishing characteristics between the categories.
+By contrast, the baseline model had more varied guesses, but had low accuracy for every category and overall, perhaps indicating that my definitions need to be tighter.
 
 
 
