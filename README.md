@@ -236,6 +236,14 @@ experience     31    7     7
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
 
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.467 | 0.467 | 0.467 | 0.000 |
+| Macro F1 | 0.212 | 0.212 | 0.212 | 0.000 |
+| F1 — `seeking` | 0.636 | 0.636 | 0.636 | 0.000 |
+| F1 — `advising` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `experience` | 0.000 | 0.000 | 0.000 | 0.000 |
+
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
 | Overall accuracy | 0.333 | 0.467 | +0.133 |
@@ -273,17 +281,17 @@ By contrast, the baseline model had more varied guesses, but had low accuracy fo
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
+| true \ predicted | seeking | advising | experience |
 |---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| **seeking** | 14 | 0 | 0 |
+| **advising** | 9 | 0 | 0 |
+| **experience** | 7 | 0 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
-
+9 real `advising` posts called `seeking`, because every post was predicted as `seeking`. This indicates that the model was not able to pick up on the distinctive qualities of any of the categories, and that it fell back on giving the label of the most frequent category as its guess.
 
 
 ---
