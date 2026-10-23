@@ -332,7 +332,7 @@ By contrast, the baseline model had more varied guesses, but had low accuracy fo
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 29 / 30 = 97%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -355,24 +355,15 @@ By contrast, the baseline model had more varied guesses, but had low accuracy fo
      what you did across your own 200. -->
 
 **1.**
-> *The post:*
+> *The post:* Times are down about 3% since the shoe rules changed, so obviously the shoes are the whole story and the sport has a problem.
 >
-> *Staff said / I said:*
+> *Staff said / I said:* `hot_take` / `analysis`
 >
-> *My call, and why:*
+> *My call, and why:* I still say this is `analysis`. I don't believe that the word "obviously" etc definitively shows that the writer came to the conclusion on their own before learning the numbers. The way the sentence is structured (Evidence, so Conclusion) make it sound like the author learned the numbers and came to an extreme conclusion based on them. Alternatively, I could even make an argument that the post might be sarcastic, with "obviously" and "whole story" being purposefully extreme and absurd, and the claim that times decreased by such a small amount might be analytic evidence to prove that the shoes couldn't possibly be the one problem.
 >
-> *Which pile:*
+> *Which pile:* (c) the rule is ambiguous here and my reading is defensible
 
-**2.**
-> *The post:*
->
-> *Staff said / I said:*
->
-> *My call, and why:*
->
-> *Which pile:*
-
-**What the pattern in my disagreements tells me:**
+**What the pattern in my disagreements tells me:** It's difficult for different people to agree on taxonomy where decision rules are based on the author's intent, which could be interpreted in different ways.
 
 
 
