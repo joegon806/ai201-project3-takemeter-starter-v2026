@@ -224,6 +224,11 @@ experience     31    7     7
 
 **Pre-labelling disclosure:** I read and labelled every one of the 200 posts, and I had Claude review each one and explain to me which posts felt like they were labeled wrong. Posts whose labels are revised due to the AI's feedback are noted with "ai-revised".
 
+**Additional Moments**
+
+- I asked for help figuring out why the model only guessed one category for every single post and how to fix it.
+- I asked for an explanation of each of the model's hyperparameters.
+
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
      Don't fill these in during unit 5.
@@ -270,11 +275,11 @@ By contrast, the baseline model had more varied guesses, but had low accuracy fo
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall Accuracy | >= 0.85 | 0.467 | 0.467 | 0.467 | MISSED |
+| 2. Label Balance | each label <= 70% of predictions | `seeking` 100% | `seeking` 100% | `seeking` 100% | MISSED |
+| 3. accuracy_most_confident_third > accuracy_least_confident_third | >= 10% points | 40% points | 50% points | 40% points | MET |
+| 4. Recall for `experience` | >= 60% | 0% | 0% | 0% | MISSED |
+| 5. `experience` Balance | >= 10% of predictions | `experience` 0% | `experience` 0% | `experience` 0% | MISSED |
 
 ### Confusion matrix
 
@@ -303,11 +308,12 @@ By contrast, the baseline model had more varied guesses, but had low accuracy fo
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall Accuracy | >= 0.85 | MISSED | The model guessed all `seeking` and got 47% accuracy as a result. |
+| 2 | Label Balance | each label <= 70% of predictions | MISSED | The model guessed `seeking` for 100% of the posts, far outweighing the real percentage of `seeking` posts. |
+| 3 | accuracy_most_confident_third > accuracy_least_confident_third | >= 10% points | MET | accuracy_most_confident_third was 70% and accuracy_least_confident_third was 30 or 20%, a difference of 40 or 50%. This indicates that despite guessing `seeking` on every post, the model was still able to discern some distinguishing characteristics of real `seeking` posts, which increased its confidence identifying some of the posts. |
+| 4 | Recall for `experience` | >= 60% | MISSED | Recall for `experience` is 0% because the model never guessed any posts were `experience`. |
+| 5 | `experience` Balance | >= 10% of predictions | MISSED | The model had 0 guesses for `experience`. |
+
 
 **Diagnoses**
 
@@ -320,6 +326,7 @@ By contrast, the baseline model had more varied guesses, but had low accuracy fo
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
+All four misses were caused by the model guessing `seeking` for all of the posts. I doubt that I applied boundaries inconsistently because my agreement report shows I have an agreement rate of 97%, indicating that I can consistently apply labeling boundaries. Rather, the model was not fully able to grasp the differences between categories because its settings need to be better fine-tuned: the number of epochs is small, which means the model only reads the training set a small amount of times, the learning rate is slow, the batch size before adjustment is large, the max length of characters that the model reads in a post before cutting off is too short, etc. I will fix this issue by adjusting the parameters and seeing if it produces substantial improvement in the results (...almost anything is better than guessing only one category).
 
 
 ---
