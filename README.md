@@ -378,25 +378,26 @@ All four misses were caused by the model guessing `seeking` for all of the posts
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** The number of epochs increased from 3 to 10.
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** All four misses, due to the model not learning the categories well enough and falling back to guessing `seeking` for every post.
 
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall Accuracy | >= 0.85 | 0.733 | 0.733 | 0.833 | MISSED |
+| 2. Label Balance | each label <= 70% of predictions | `seeking` 47% | `seeking` 67% | `seeking` 63% | MET |
+| 3. accuracy_most_confident_third > accuracy_least_confident_third | >= 10% points | 40% points | 10% points | 10% points | MET |
+| 4. Recall for `experience` | >= 60% | 43% | 29% | 71% | MISSED |
+| 5. `experience` Balance | >= 10% of predictions | `experience` 13% | `experience` 10% | `experience` 17% | MET |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
+The change did help. Increasing the epochs allowed the model to learn the patterns of the training posts better, which resulted in a modest overall accuracy of 73% or 83%. 
 
 
 ---

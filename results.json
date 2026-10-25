@@ -1,50 +1,50 @@
 {
   "seed": 42,
   "n_test": 30,
-  "accuracy": 0.4666666666666667,
-  "f1_macro": 0.21212121212121213,
+  "accuracy": 0.7333333333333333,
+  "f1_macro": 0.6991419572064733,
   "per_label": {
     "seeking": {
-      "precision": 0.4666666666666667,
-      "recall": 1.0,
-      "f1": 0.6363636363636364,
+      "precision": 0.7058823529411765,
+      "recall": 0.8571428571428571,
+      "f1": 0.7741935483870968,
       "support": 14
     },
     "advising": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
+      "precision": 0.7777777777777778,
+      "recall": 0.7777777777777778,
+      "f1": 0.7777777777777778,
       "support": 9
     },
     "experience": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
+      "precision": 0.75,
+      "recall": 0.42857142857142855,
+      "f1": 0.5454545454545454,
       "support": 7
     }
   },
   "confusion": {
     "seeking": {
-      "seeking": 14,
-      "advising": 0,
-      "experience": 0
+      "seeking": 12,
+      "advising": 1,
+      "experience": 1
     },
     "advising": {
-      "seeking": 9,
-      "advising": 0,
+      "seeking": 2,
+      "advising": 7,
       "experience": 0
     },
     "experience": {
-      "seeking": 7,
-      "advising": 0,
-      "experience": 0
+      "seeking": 3,
+      "advising": 1,
+      "experience": 3
     }
   },
   "confidence": {
-    "mean_when_right": 0.5041255950927734,
-    "mean_when_wrong": 0.47910064458847046,
-    "accuracy_most_confident_third": 0.7,
-    "accuracy_least_confident_third": 0.3,
+    "mean_when_right": 0.666073203086853,
+    "mean_when_wrong": 0.5149204134941101,
+    "accuracy_most_confident_third": 0.9,
+    "accuracy_least_confident_third": 0.5,
     "n_per_third": 10
   },
   "device": "cpu",
