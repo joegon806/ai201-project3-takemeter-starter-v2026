@@ -225,7 +225,7 @@ experience     31    7     7
 **Pre-labelling disclosure:** I read and labelled every one of the 200 posts, and I had Claude review each one and explain to me which posts felt like they were labeled wrong. Posts whose labels are revised due to the AI's feedback are noted with "ai-revised".
 
 **Additional Moments**
-
+- I had Claude calculate the percentages of the category labels in the data to write in the README.
 - I asked for help figuring out why the model only guessed one category for every single post and how to fix it.
 - I asked for an explanation of each of the model's hyperparameters.
 
@@ -392,6 +392,30 @@ All four misses were caused by the model guessing `seeking` for all of the posts
 | 4. Recall for `experience` | >= 60% | 43% | 29% | 71% | MISSED |
 | 5. `experience` Balance | >= 10% of predictions | `experience` 13% | `experience` 10% | `experience` 17% | MET |
 
+### Confusion matrices
+
+Seed 1 (42):
+| true \ predicted | seeking | advising | experience |
+|---|---|---|---|
+| **seeking** | 12 | 1 | 1 |
+| **advising** | 2 | 7 | 0 |
+| **experience** | 3 | 1 | 3 |
+
+Seed 2 (7):
+| true \ predicted | seeking | advising | experience |
+|---|---|---|---|
+| **seeking** | 14 | 0 | 0 |
+| **advising** | 2 | 6 | 1 |
+| **experience** | 4 | 1 | 2 |
+
+Seed 3 (2024):
+| true \ predicted | seeking | advising | experience |
+|---|---|---|---|
+| **seeking** | 14 | 0 | 0 |
+| **advising** | 3 | 6 | 0 |
+| **experience** | 2 | 0 | 5 |
+
+
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
@@ -406,11 +430,17 @@ The change did help. Increasing the epochs allowed the model to learn the patter
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
+The remaining missed criteria are Criterion 1: Overall Accuracy >= 85%, and Criterion 4: Recall for `experience` is >= 60%. 
+For Criterion 1, the model resulted in overall accuracies of 0.733 and 0.833, which fall short of the criterion. For a dataset with such intricate category distinctions and edge cases, I would believe these are acceptable metrics, but the variance in accuracy by 10% across different seeds is indicative of an unstable model.
+For Criterion 4, the recall for `experience` varied wildly across all three seeds, from 29% to 43% and to 71%. This too is indicative of an unstable model, or that the portion of `experience` posts in the training data was too small for the model to recognize their patterns.
+These results were caused by the implemented fix of changing the number of epochs from 3 to 10. This made the notebook take about 30 minutes to one full run. Because of this run time and because of the improvement from the previous run, I thought that this setting would be sufficient and that running the model further would not be necessary. Additionally, the instructions called for me to change only one setting, so only the epochs setting was changed; none of the other settings were tampered with.
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+In the second seed (7), seeking has 100% recall, which means that all seeking posts were guessed correctly and not mistaken for anything else.
+In the third seed (2024), seeking has 100% recall again, and advising and experience have 100% precision, which means no posts were mistakenly guessed as advising or experience (though some were mistaken for seeking).
+These metrics indicate that the model was able to recognize the traits of seeking posts to identify them correctly as seeking, as well as the third seed having the confidence to give the advising and experience labels only to posts that match. This is very close to what I meant my labels to capture, but the incorrect guesses across all seeds show that the model still falls short. For example, each seed having incorrect 'seeking' guesses for all categories may indicate that the model hasn't fully learned to discern a seeking question from a discussion question, a noted boundary rule.
 
 
 
@@ -418,32 +448,32 @@ learned:**
 
      SUBMISSION CHECKLIST — unit 5
 
-       [ ] criteria.md has five numbered criteria, each naming a NUMBER
-       [ ] Each has a reason underneath tied to your data or taxonomy
-       [ ] labels.csv: at least 150 rows, text/label/note, ONE file not split
-       [ ] No label above 70%
-       [ ] All five unit 5 sections have real content
-       [ ] Label Taxonomy includes the decision rule for your hardest boundary
-       [ ] The Dataset includes three hard cases
-       [ ] results.json and test_split.csv committed (the notebook does this)
-       [ ] At least four new commits
-       [ ] Repository URL submitted — WRITE IT DOWN
+       [x] criteria.md has five numbered criteria, each naming a NUMBER
+       [x] Each has a reason underneath tied to your data or taxonomy
+       [x] labels.csv: at least 150 rows, text/label/note, ONE file not split
+       [x] No label above 70%
+       [x] All five unit 5 sections have real content
+       [x] Label Taxonomy includes the decision rule for your hardest boundary
+       [x] The Dataset includes three hard cases
+       [x] results.json and test_split.csv committed (the notebook does this)
+       [x] At least four new commits
+       [x] Repository URL submitted — WRITE IT DOWN
 
      SUBMISSION CHECKLIST — unit 6
 
-       [ ] Baseline vs. Trained table, with your prediction written beforehand
-       [ ] Run Log — Before, five criteria across three seeds
-       [ ] Confusion matrix TYPED AS A MARKDOWN TABLE
-       [ ] A verdict on every criterion
-       [ ] A diagnosis for every miss, using the agreement report as evidence
-       [ ] Agreement Report with every disagreement adjudicated
-       [ ] One improvement, with Run Log — After
-       [ ] What's Still Broken
-       [ ] results_three_seeds_before.json, results_three_seeds_after.json,
+       [x] Baseline vs. Trained table, with your prediction written beforehand
+       [x] Run Log — Before, five criteria across three seeds
+       [x] Confusion matrix TYPED AS A MARKDOWN TABLE
+       [x] A verdict on every criterion
+       [x] A diagnosis for every miss, using the agreement report as evidence
+       [x] Agreement Report with every disagreement adjudicated
+       [x] One improvement, with Run Log — After
+       [x] What's Still Broken
+       [x] results_three_seeds_before.json, results_three_seeds_after.json,
            baseline_results.json and
            agreement_results.json committed
-       [ ] At least four new commits
-       [ ] The SAME repository URL as last unit
+       [x] At least four new commits
+       [x] The SAME repository URL as last unit
 
      Do not delete and recreate this repository.
      ═════════════════════════════════════════════════════════════════════ -->
